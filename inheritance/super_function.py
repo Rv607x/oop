@@ -6,6 +6,8 @@ explicitly naming it. It makes the code more manageable, and there
  attributes.
 """
 
+print("****** Accessing parent class properties using Super() Function **********")
+print("")
 class Vehicle:      # parent class
     fuelCap = 90
     
@@ -21,3 +23,26 @@ class Car(Vehicle):
         
 obj1 = Car()
 obj1.display()
+
+print("")
+print("****************** Calling the parent class methods *******************")
+print("")
+"""
+Just like properties, super() is also used with methods. Whenever a 
+parent class and the immediate child class have any methods with the
+ same name, we use super() to access the methods from the parent 
+ class
+"""
+
+class Vehicle2:     # defining the parent class
+    def display(self):      # defining display method in parent class
+        print("I am from the Vehicle class")
+        
+class Car2(Vehicle2):   # defining child class
+    # defining method in child class
+    def display(self):
+        super().display()
+        print("I am from Car class")
+
+obj2 = Car2()
+obj2.display()
