@@ -46,3 +46,28 @@ class Car2(Vehicle2):   # defining child class
 
 obj2 = Car2()
 obj2.display()
+
+
+print("")
+print("******* Using Super() function with Initializers ********")
+print("")
+
+"""
+Another essential use of the function super() is to call the 
+initializer of the parent class from inside the initializer of the 
+child class.
+"""
+class ParentClass:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+class ChildClass(ParentClass):
+    def __init__(self, a, b, c):
+        super().__init__(a, b)
+        self.c = c
+
+obj3 = ChildClass(1, 3, 5)
+print(obj3.a)
+print(obj3.b)
+print(obj3.c)
